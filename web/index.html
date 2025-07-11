@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script type="text/javascript" src="/eel.js"></script>
+        <script type="text/javascript" defer src="javascript/main.js"></script>
+        <script type="text/javascript" defer src="javascript/text.js"></script>
+        <script type="text/javascript" defer src="javascript/click.js"></script>
+        <script type="text/javascript" defer src="javascript/settings.js"></script>
+        <link rel="stylesheet" href="style/main.css"/>
+        <link rel="stylesheet" href="style/index.css">
+        <link rel="stylesheet" href="style/settings.css">
+        <link rel="stylesheet" href="style/text.css">
+        <link rel="stylesheet" href="style/script.css">
+        <link rel="stylesheet" href="style/click.css">
+    </head>
+
+    <body>
+        <div class="nav">
+            <a href="#" class="navItem navLink" data-page="home"><img class="home" src="assets/icon2.png" alt=""></a>
+            <div class="navItem">|</div>
+            <a href="#" class="navItem navLink" data-page="click">click</a>
+            <div class="navItem">|</div>
+            <a href="#" class="navItem navLink" data-page="text">text</a>
+            <div class="navItem">|</div>
+            <a href="#" class="navItem navLink" data-page="script">script</a>
+            <a href="#" class="navItemRight navLink" data-page="settings">settings</a>
+        </div>
+
+        <div class="mainContent">
+            <!-- Home Page -->
+            <div id="home-page" class="page active">
+                <div class="title">StuffDoerV2</div>
+            </div>
+
+            <!-- Click Page -->
+            <div id="click-page" class="page">
+            </div>
+
+            <!-- Text Page -->
+            <div id="text-page" class="page">
+                <div class="main">
+                    <textarea class="text" cols="10" rows="5"  name="" id="text" placeholder="text goes here"></textarea> <!-- text -->
+                    <h2 class="textSettingsHeader">Text settings</h2>
+                    <div class="textSettings">
+                        <div class="textSettingsLeft">
+                            <div class="checkbox-option">
+                                <input type="radio" id="repeatTimes" class="custom-checkbox" name="repeatMode" checked> <!-- textMode -->
+                                <label for="repeat_checkbox">repeat</label>
+                                <input type="number" min="1" value="1" class="repeat_times_input" id="textRepeatTimes"> <!-- repeatTimes -->
+                                <label for="repeat_checkbox">times</label>
+                            </div>
+                            <div class="checkbox-option">
+                                <input type="radio" id="repeatInfinite" class="custom-checkbox" name="repeatMode"> <!-- repeatInfinite -->
+                                <label for="repeat_infinite">repeat until stopped</label>
+                            </div>
+                        </div>
+                        <div class="textSettingsRight">
+                            <div class="checkbox-option-right">
+                                <label for="">interval</label>
+                                <input type="number" min="1" value="1000"class="interval-ms-input" id="textInterval"> <!-- interval -->
+                                <label for="">ms</label>
+                            </div>
+                            <div class="checkbox-option-right">
+                                <label for="">offset ±</label>
+                                <input type="number" min="0" value="0"class="interval-ms-input" id="textOffset"> <!-- offset -->
+                                <label for="">ms</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="startBtn" id="startBtn">Start / F10</div> <!-- start/stop button -->
+                    <div class="stopBtn" id="stopBtn">Stop / ESC</div> <!-- start/stop button -->
+                </div>
+            </div>
+
+            <!-- Script Page -->
+            <div id="script-page" class="page">
+            </div>
+
+            <!-- Settings Page -->
+            <div id="settings-page" class="page">
+                <div class="main">
+                    <div class="sections">
+                        <section>Hotkey</section>
+                        <div class="hotkey">
+                            <div class="hotkeyBtn">F10</div><p>Start</p>
+                        </div>
+                        <div class="hotkey">
+                            <div class="hotkeyBtn">ESC</div><p>Stop</p>
+                        </div>
+
+                        <section>Theme</section>
+                        <div class="themeSelections">
+                            <div class="light">
+                                light
+                                <div class="lightSelect"></div>
+                            </div>
+                            <div class="dark">
+                                dark
+                                <div class="darkSelect"></div>
+                            </div>
+                            <div class="system">
+                                system
+                                <div class="systemSelect"></div>
+                            </div>
+                        </div>
+
+                        <section>Accent</section>
+                        <div class="accents">
+                            <div class="accentNone">
+                                None
+                                <div class="noneSelect"></div>
+                            </div>
+                            <div class="accent">
+                                lavender
+                                <div class="lavSelect"></div>
+                            </div>
+                            <div class="accent">
+                                blue
+                                <div class="blueSelect"></div>
+                            </div>
+                            <div class="accent">
+                                green
+                                <div class="greenSelect"></div>
+                            </div>
+                            <div class="accent">
+                                orange
+                                <div class="orangeSelect"></div>
+                            </div>
+                        </div>
+
+                        <section>Script</section>
+                        <div class="scriptFolderContainer">
+                            <div class="folderBtnTopText">open folder</div>
+                            <div class="openFolderBtn">Folder Icon</div>
+                        </div>
+                    </div>
+                    <div class="sectionBottom">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,22 @@
+{
+    "theme": "light",
+    "accent": "none",
+    "hotkeys": {
+        "start": "F10",
+        "stop": "ESC"
+    },
+    "textConfig": {
+        "text": "",
+        "textMode": "repeat_times",
+        "repeatTimes": 1,
+        "interval": 1000,
+        "offset": 0
+    },
+    "clickConfig": {
+        "clickMode": "repeat_times",
+        "repeatTimes": 1,
+        "interval": 1000,
+        "offset": 0,
+        "clickList": []
+    }
+}

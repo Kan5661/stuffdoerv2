@@ -1,0 +1,206 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+section {
+    margin-top: 45px;
+    margin-bottom: 10px;
+}
+
+.sections {
+    height: 87%;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: visible;
+}
+
+.sectionBottom {
+    width: 100%;
+    height: 13%;
+    border-top: 3px solid;
+    border-color: var(--accent2);
+    opacity: 0.45;
+    margin-top: auto;
+    box-sizing: border-box;
+}
+
+.hotkey {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 10px;
+}
+
+.hotkeyBtn {
+    border: 3px solid;
+    border-color: var(--accent2);
+    color: var(--accentMain);
+    border-radius: 10px;
+    width: 75px;
+    padding: 5px 0;
+    text-align: center;
+    opacity: 0.7;
+    transition: all 100ms ease-in;
+}
+
+.hotkeyBtn:hover {
+    opacity: 1;
+}
+
+
+.themeSelections, .accents {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    font-size: 0.6rem;
+    margin: 0 5px;
+}
+
+.lightSelect, .darkSelect, .systemSelect, .lavSelect, .noneSelect, .blueSelect, .greenSelect, .orangeSelect {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    margin: 5px 0;
+    border: 0.1px solid grey;
+}
+
+.lightSelect:hover, .darkSelect:hover, .systemSelect:hover {
+    cursor: pointer;
+    box-shadow:
+      0 0 0 1px black,
+      0 0 0 2px white,
+      0 0 0 3px black;
+}
+
+.light, .dark, .system, .accentNone, .accent {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lightSelect {
+    background-color: white;
+}
+
+.darkSelect {
+    background-color: black;
+}
+
+.systemSelect {
+    background: linear-gradient(to right, black 50%, white 50%);
+    transform: rotate(45deg);
+}
+
+.themeSelected, .accentSelected {
+    box-shadow:
+      0 0 0 1px black,
+      0 0 0 2px white,
+      0 0 0 3px black;
+}
+
+
+
+
+
+.noneSelect {
+    background-color: inherit;
+    border: 2px solid;
+    border-color: rgb(240, 128, 120);
+    position: relative;
+    display: inline-block;
+    transform: rotate(-45deg);
+    box-sizing: border-box;
+}
+
+.noneSelect::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -2px;
+    right: -2px;
+    height: 2px;
+    background: rgb(240, 128, 120);
+    transform: translateY(-50%);
+}
+
+
+.lavSelect {
+    background: linear-gradient(to right, rgb(204, 108, 190) 50%, rgb(156, 34, 138) 50%);
+    transform: rotate(45deg);
+}
+
+.blueSelect {
+    background: linear-gradient(to right, rgb(74, 144, 226) 50%, rgb(30, 58, 138) 50%);
+    transform: rotate(45deg);
+}
+
+.greenSelect {
+    background: linear-gradient(to right, rgb(34, 197, 94) 50%, rgb(21, 128, 61) 50%);
+    transform: rotate(45deg);
+}
+
+.orangeSelect {
+    background: linear-gradient(to right, rgb(249, 115, 22) 50%, rgb(194, 65, 12) 50%);
+    transform: rotate(45deg);
+}
+
+.accentSelected {
+    box-shadow:
+      0 0 0 1px black,
+      0 0 0 2px white,
+      0 0 0 3px black;
+}
+
+.noneSelect:hover, .lavSelect:hover, .blueSelect:hover, .greenSelect:hover, .orangeSelect:hover {
+    cursor: pointer;
+    box-shadow:
+      0 0 0 1px black,
+      0 0 0 2px white,
+      0 0 0 3px black;
+}
+
+.blueSelect {
+    background: linear-gradient(to right, rgb(74, 144, 226) 50%, rgb(30, 58, 138) 50%);
+    transform: rotate(45deg);
+}
+
+.greenSelect {
+    background: linear-gradient(to right, rgb(34, 197, 94) 50%, rgb(21, 128, 61) 50%);
+    transform: rotate(45deg);
+}
+
+.orangeSelect {
+    background: linear-gradient(to right, rgb(249, 115, 22) 50%, rgb(194, 65, 12) 50%);
+    transform: rotate(45deg);
+}
+
+
+
+
+.folderBtnTopText {
+    font-size: 0.7rem;
+    margin: 5px 3px;
+}
+
+.openFolderBtn {
+    width: 150px;
+    padding: 5px 0;
+    border: 2px solid;
+    border-color: var(--accent2);
+    border-radius: 10px;
+    color: var(--accentMain);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0.7;
+    transition: all 100ms;
+}
+
+.openFolderBtn:hover {
+    opacity: 1;
+}

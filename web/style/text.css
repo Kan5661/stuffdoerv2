@@ -1,0 +1,121 @@
+.text {
+    resize: none;
+    outline: none;
+    border-radius: 20px;
+    border: 3px solid;
+    opacity: 0.7;
+    font-size: 1.1rem;
+    padding: 15px 20px;
+    margin: 30px 0px 15px 0px;
+    font-family: 'QDcomicsans';
+    background-color: inherit;
+    color: inherit
+}
+
+.text:text {
+    color: var(--accent2)
+}
+
+.text:focus {
+    /* border-color: var(--accent2); */
+    box-shadow: 0px 0px 7px 3px var(--accentMain);
+}
+
+.text::placeholder {
+    color: var(--accentMain);
+    opacity: 0.5;
+}
+
+.textSettingsHeader {
+    font-size: 1rem;
+    margin: 10px 0px;
+    font-weight: normal;
+}
+
+.textSettings {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+
+.textSettingsLeft, .textSettingsRight {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.textSettingsRight {
+    width: 50%;
+}
+
+.checkbox-option, .checkbox-option-right {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+}
+.checkbox-option-right {
+    justify-content: flex-end;
+}
+
+.repeat_times_input, .interval-ms-input {
+    width: 75px;
+    border: 2px solid;
+    border-color: var(--accentMain);
+    border-radius: 5px;
+    color: inherit;
+    background-color: inherit;
+}
+.repeat_times_input:focus, .interval-ms-input:focus {
+    outline: none;
+    border-color: var(--accent2);
+}
+
+.custom-checkbox {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid;
+  border-color: inherit;
+  border-radius: 5px;
+  display: inline-grid;
+  place-content: center;
+  cursor: pointer;
+  color: var(--accentMain); /* Inherit text color from parent  */
+}
+
+.custom-checkbox::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+  transform: scale(0);
+  transition: transform 0.15s ease-in-out;
+  background-color: currentColor; /* color for inner dot */
+}
+
+.custom-checkbox:checked::before {
+  transform: scale(1);
+}
+
+.startBtn {
+    margin: 0 auto;
+    margin-top: auto;
+    margin-bottom: 40px;
+    border: 3px solid;
+    border-color: var(--accent2);
+    border-radius: 15px;
+    padding: 15px;
+    width: 80%;
+    color: var(--accent2);
+    transition: all 100ms linear;
+    text-align: center;
+    cursor: pointer;
+}
+.startBtn:hover {
+    border-color: var(--accentMain);
+    color: var(--accentMain);
+    scale: 1.01;
+}

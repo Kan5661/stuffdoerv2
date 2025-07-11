@@ -1,0 +1,21 @@
+.mainContent {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: LogoPopUP 700ms ease-in;
+    height: 91%;
+}
+
+.title {
+    font-size: 4rem;
+    margin-bottom: 150px;
+}
+
+@keyframes LogoPopUP {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

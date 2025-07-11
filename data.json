@@ -1,0 +1,8 @@
+{
+    "theme": "black",
+    "accent": false,
+    "hotkeys": {
+        "start": "F10",
+        "stop": "ESC"
+    }
+}

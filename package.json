@@ -1,0 +1,24 @@
+{
+  "name": "stuffdoerv2",
+  "version": "1.0.0",
+  "description": "macro text + click app using python package eel and electron",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [
+    "electron",
+    "autoclick",
+    "texting",
+    "spammer",
+    "macro",
+    "script",
+    "python"
+  ],
+  "author": "kan5661",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^37.2.0"
+  },
+  "type": "module"
+}
