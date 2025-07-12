@@ -12,7 +12,7 @@ const green = document.querySelector(".greenSelect")
 const orange = document.querySelector(".orangeSelect")
 const accentButtons = { none, lavender, blue, green, orange}
 
-async function initializeSettings() {
+async function useConfigSettings() {
     const config = await eel.read_config()();
 
     // Clear previous selection
@@ -47,14 +47,14 @@ function updateBodyTheme(theme) {
 
 const updateTheme = async (theme) => {
     await eel.update_theme(theme)();
-    await initializeSettings();
+    await useConfigSettings();
     const config = await eel.read_config()();
     console.log(config);
 };
 
 const updateAccent = async (accent) => {
     await eel.update_accent(accent)();
-    await initializeSettings();
+    await useConfigSettings();
     const config = await eel.read_config()();
     console.log(config);
 };

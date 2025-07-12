@@ -24,3 +24,12 @@ def update_accent(accent):
 
     with open("config.json", "w") as file:
         json.dump(config, file, indent=4)
+
+@eel.expose
+def update_text_config(text_config):
+    with open("config.json", "r") as file:
+        config = json.load(file)
+    config["textConfig"] = text_config
+
+    with open("config.json", "w") as file:
+        json.dump(config, file, indent=4)

@@ -53,6 +53,16 @@
                                 <input type="radio" id="repeatInfinite" class="custom-checkbox" name="repeatMode"> <!-- repeatInfinite -->
                                 <label for="repeat_infinite">repeat until stopped</label>
                             </div>
+                            <div class="checkbox-option">
+                                <input type="checkbox" id="enterEveryLoop" class="custom-checkbox" name="enterEveryLoop" checked>
+                                <label for="enterEveryLoop">On text</label>
+
+                                <select id="onTextKeySelect" class="onTextKey">
+                                    <option value="enter">ENTER</option>
+                                    <option value="tab">TAB</option>
+                                    <option value="space">SPACE</option>
+                                </select>
+                            </div>
                         </div>
                         <div class="textSettingsRight">
                             <div class="checkbox-option-right">
@@ -65,10 +75,15 @@
                                 <input type="number" min="0" value="0"class="interval-ms-input" id="textOffset"> <!-- offset -->
                                 <label for="">ms</label>
                             </div>
+                            <div class="checkbox-option-right">
+                                <label for="">stroke delay</label>
+                                <input type="number" min="0" value="50"class="interval-ms-input" id="strokeDelay"> <!-- offset -->
+                                <label for="">ms</label>
+                            </div>
                         </div>
                     </div>
-                    <div class="startBtn" id="startBtn">Start / F10</div> <!-- start/stop button -->
-                    <div class="stopBtn" id="stopBtn">Stop / ESC</div> <!-- start/stop button -->
+                    <div class="startBtn" id="startBtn">Start / F10</div>
+                    <div class="stopBtn hideElement" id="stopBtn">Stop / ESC</div>
                 </div>
             </div>
 

@@ -13,12 +13,13 @@
 }
 
 .text:text {
-    color: var(--accent2)
+    color: var(--accent2);
 }
 
 .text:focus {
     /* border-color: var(--accent2); */
-    box-shadow: 0px 0px 7px 3px var(--accentMain);
+    box-shadow: 0px 1px 2px 1px var(--accentMain);
+    opacity: 1;
 }
 
 .text::placeholder {
@@ -60,17 +61,19 @@
     justify-content: flex-end;
 }
 
-.repeat_times_input, .interval-ms-input {
+.repeat_times_input, .interval-ms-input, .onTextKey {
     width: 75px;
     border: 2px solid;
     border-color: var(--accentMain);
     border-radius: 5px;
     color: inherit;
     background-color: inherit;
+    opacity: 0.5;
 }
-.repeat_times_input:focus, .interval-ms-input:focus {
+.repeat_times_input:focus, .interval-ms-input:focus, .onTextKey:focus {
     outline: none;
     border-color: var(--accent2);
+    opacity: 1;
 }
 
 .custom-checkbox {
@@ -100,7 +103,7 @@
   transform: scale(1);
 }
 
-.startBtn {
+.startBtn, .stopBtn {
     margin: 0 auto;
     margin-top: auto;
     margin-bottom: 40px;
@@ -113,9 +116,21 @@
     transition: all 100ms linear;
     text-align: center;
     cursor: pointer;
+    opacity: 0.7;
 }
-.startBtn:hover {
+.startBtn:hover, .stopBtn:hover {
     border-color: var(--accentMain);
     color: var(--accentMain);
     scale: 1.01;
+    opacity: 1;
+}
+
+.stopBtn {
+    border-color: #ff8080;
+    color: #ff0000
+}
+
+.stopBtn:hover {
+    border-color: #ff0000;
+    color: #ff0000
 }

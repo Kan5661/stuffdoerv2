@@ -17,13 +17,24 @@ function createWindow() {
     // image.setTemplateImage(true)
     console.log(image.isEmpty())
     mainWindow = new BrowserWindow({
-        // width: 570,
-        // height: 600,
-        width: 900,
+        width: 570,
         height: 600,
+        // width: 900,
+        // height: 600,
         webPreferences: {
             nodeIntegration: true,
         },
+    });
+
+    // Disable Cmd+R and Ctrl+R
+    mainWindow.webContents.on("before-input-event", (event, input) => {
+        if (
+            (input.key.toLowerCase() === "r" && input.control) ||
+            (input.key.toLowerCase() === "r" && input.meta)
+        ) {
+            console.log("Blocked reload shortcut!");
+            event.preventDefault();
+        }
     });
 
     // and load the index.html of the app.
@@ -35,7 +46,7 @@ function createWindow() {
 
 
     // Open the DevTools.
-    mainWindow.webContents.openDevTools()
+    // mainWindow.webContents.openDevTools()
 
     // Emitted when the window is closed.
     mainWindow.on("closed", function () {

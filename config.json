@@ -1,16 +1,18 @@
 {
-    "theme": "light",
-    "accent": "none",
+    "theme": "dark",
+    "accent": "blue",
     "hotkeys": {
         "start": "F10",
         "stop": "ESC"
     },
     "textConfig": {
-        "text": "",
-        "textMode": "repeat_times",
-        "repeatTimes": 1,
+        "repeatMode": "repeatTimes",
+        "text": "hello world! ",
         "interval": 1000,
-        "offset": 0
+        "offset": 0,
+        "repeatTimes": 10,
+        "strokeDelay": 25,
+        "onTextKey": "enter"
     },
     "clickConfig": {
         "clickMode": "repeat_times",
