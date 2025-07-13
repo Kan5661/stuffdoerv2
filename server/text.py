@@ -3,6 +3,7 @@ from pynput.keyboard import Key
 import eel
 import time
 import random
+import threading
 from server.config import update_text_config
 
 keyboard_controller = keyboard.Controller()
@@ -19,6 +20,9 @@ def on_press(key):
 
 @eel.expose
 def start_text():
+    threading.Thread(target=_start_text_worker).start()
+
+def _start_text_worker():
     global text_repeat
 
     print("start text")
@@ -29,10 +33,10 @@ def start_text():
     text_repeat = True
     interval = config["interval"] / 1000
     offset = config["offset"] / 1000
-    stroke_delay = config["strokeDelay"] / 1000  # Convert ms to seconds
+    stroke_delay = config["strokeDelay"] / 1000
     step = 0.05
 
-    on_text_key = config.get("onTextKey", "enter")  # Default to "enter"
+    on_text_key = config.get("onTextKey", "enter")
 
     def type_text_slow(text, delay=0):
         for char in text:
@@ -46,7 +50,6 @@ def start_text():
                 "enter": Key.enter,
                 "tab": Key.tab,
                 "space": Key.space,
-                # Add more if needed
             }.get(on_text_key, Key.enter)
 
             keyboard_controller.press(key_to_press)
@@ -92,9 +95,11 @@ def start_text():
             press_after_key()
 
         print("Exited infinite loop.")
+        eel.update_text_btn("idle")()
 
 @eel.expose
 def stop_text():
     global text_repeat
+    print("stopping text")
     text_repeat = False
     eel.update_text_btn("idle")()

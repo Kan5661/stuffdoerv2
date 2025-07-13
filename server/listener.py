@@ -10,7 +10,7 @@ class ListenerManager:
         self.current_mode = None
         self.listeners = {
             'text': self.create_text_listener,
-            # 'click': self.create_click_listener,
+            'click': self.create_click_listener,
             # 'script': self.create_script_listener
         }
 

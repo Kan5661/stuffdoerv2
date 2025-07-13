@@ -2,10 +2,10 @@
 <html>
     <head>
         <script type="text/javascript" src="/eel.js"></script>
-        <script type="text/javascript" defer src="javascript/main.js"></script>
-        <script type="text/javascript" defer src="javascript/text.js"></script>
-        <script type="text/javascript" defer src="javascript/click.js"></script>
-        <script type="text/javascript" defer src="javascript/settings.js"></script>
+        <script type="module" src="javascript/main.js"></script>
+        <script type="module" src="javascript/text.js"></script>
+        <script type="module" src="javascript/click.js"></script>
+        <script type="module" src="javascript/settings.js"></script>
         <link rel="stylesheet" href="style/main.css"/>
         <link rel="stylesheet" href="style/index.css">
         <link rel="stylesheet" href="style/settings.css">
@@ -16,7 +16,7 @@
 
     <body>
         <div class="nav">
-            <a href="#" class="navItem navLink" data-page="home"><img class="home" src="assets/icon2.png" alt=""></a>
+            <a href="#" class="navItem navLink" data-page="home"><img class="home" src="assets/icon.png" alt=""></a>
             <div class="navItem">|</div>
             <a href="#" class="navItem navLink" data-page="click">click</a>
             <div class="navItem">|</div>
@@ -34,6 +34,45 @@
 
             <!-- Click Page -->
             <div id="click-page" class="page">
+                <div class="main">
+                    <div class="clickContainer">
+                        <div class="clickOptionsContainer">
+                            <h2 class="clickHeader">click options</h2>
+                            <div class="clickOptions">
+                                <div class="checkbox-option">
+                                    <input type="radio" id="clickRepeatTimes" class="custom-checkbox" name="clickRepeatMode" checked> <!-- textMode -->
+                                    <label for="clickRepeatTimes">repeat</label>
+                                    <input type="number" min="1" value="1" class="repeat_times_input" id="clickRepeatTimes"> <!-- repeatTimes -->
+                                    <label for="clickRepeatTimes">times</label>
+                                </div>
+                                <div class="checkbox-option">
+                                    <input type="radio" id="clickRepeatInfinite" class="custom-checkbox" name="clickRepeatMode"> <!-- repeatInfinite -->
+                                    <label for="clickRepeatInfinite">repeat until stopped</label>
+                                </div>
+                                <div class="checkbox-option">
+                                    <label for="clickInterval">interval</label>
+                                    <input type="number" min="1" value="1000"class="interval-ms-input" id="clickInterval"> <!-- interval -->
+                                    <label for="clickInterval">ms</label>
+                                </div>
+                                <div class="checkbox-option">
+                                    <label for="clickOffset">offset ±</label>
+                                    <input type="number" min="0" value="0"class="interval-ms-input" id="clickOffset"> <!-- offset -->
+                                    <label for="clickOffset">ms</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="clickList">
+                            <h2 class="clickHeader">click list</h2>
+                            <div class="clicksList">
+
+                            </div>
+                            <button class="addClick" id="addClick">add click</button>
+                            <button class="addingClick hideElement" id="addingClick">select click position</button>
+                        </div>
+                    </div>
+                    <div class="clickStartBtn" id="clickStartBtn">Start / F10</div>
+                    <div class="clickStopBtn hideElement" id="clickStopBtn">Stop / ESC</div>
+                </div>
             </div>
 
             <!-- Text Page -->
@@ -45,13 +84,13 @@
                         <div class="textSettingsLeft">
                             <div class="checkbox-option">
                                 <input type="radio" id="repeatTimes" class="custom-checkbox" name="repeatMode" checked> <!-- textMode -->
-                                <label for="repeat_checkbox">repeat</label>
+                                <label for="repeatTimes">repeat</label>
                                 <input type="number" min="1" value="1" class="repeat_times_input" id="textRepeatTimes"> <!-- repeatTimes -->
-                                <label for="repeat_checkbox">times</label>
+                                <label for="repeatTimes">times</label>
                             </div>
                             <div class="checkbox-option">
                                 <input type="radio" id="repeatInfinite" class="custom-checkbox" name="repeatMode"> <!-- repeatInfinite -->
-                                <label for="repeat_infinite">repeat until stopped</label>
+                                <label for="repeatInfinite">repeat until stopped</label>
                             </div>
                             <div class="checkbox-option">
                                 <input type="checkbox" id="enterEveryLoop" class="custom-checkbox" name="enterEveryLoop" checked>
@@ -66,24 +105,24 @@
                         </div>
                         <div class="textSettingsRight">
                             <div class="checkbox-option-right">
-                                <label for="">interval</label>
-                                <input type="number" min="1" value="1000"class="interval-ms-input" id="textInterval"> <!-- interval -->
-                                <label for="">ms</label>
+                                <label for="textInterval">interval</label>
+                                <input type="number" min="1" value="1000" class="interval-ms-input" id="textInterval"> <!-- interval -->
+                                <label for="textInterval">ms</label>
                             </div>
                             <div class="checkbox-option-right">
-                                <label for="">offset ±</label>
+                                <label for="textOffset">offset ±</label>
                                 <input type="number" min="0" value="0"class="interval-ms-input" id="textOffset"> <!-- offset -->
-                                <label for="">ms</label>
+                                <label for="textOffset">ms</label>
                             </div>
                             <div class="checkbox-option-right">
-                                <label for="">stroke delay</label>
+                                <label for="strokeDelay">stroke delay</label>
                                 <input type="number" min="0" value="50"class="interval-ms-input" id="strokeDelay"> <!-- offset -->
-                                <label for="">ms</label>
+                                <label for="strokeDelay">ms</label>
                             </div>
                         </div>
                     </div>
-                    <div class="startBtn" id="startBtn">Start / F10</div>
-                    <div class="stopBtn hideElement" id="stopBtn">Stop / ESC</div>
+                    <div class="textStartBtn" id="textStartBtn">Start / F10</div>
+                    <div class="textStopBtn hideElement" id="textStopBtn">Stop / ESC</div>
                 </div>
             </div>
 

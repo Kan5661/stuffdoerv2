@@ -1,3 +1,8 @@
+import { initializeSettings } from './settings.js'
+import { initializeClick } from './click.js'
+import { initializeText } from './text.js'
+import { initializeScript } from './script.js'
+
 const configSetup = async () => {
     const config = await eel.read_config()()
     let useDark = false;
@@ -13,7 +18,7 @@ const configSetup = async () => {
     updateAccentVariables(config.accent);
 }
 
-function updateAccentVariables(accent) {
+export function updateAccentVariables(accent) {
     const root = document.documentElement;
 
     switch(accent) {

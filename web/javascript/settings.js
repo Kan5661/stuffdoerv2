@@ -1,3 +1,6 @@
+import { updateAccentVariables } from './main.js'
+import { onAddingClickBtnPress } from './click.js'
+
 // Get theme buttons once
 const light = document.querySelector(".lightSelect");
 const dark = document.querySelector(".darkSelect");
@@ -68,3 +71,10 @@ lavender.addEventListener("click", () => updateAccent("lavender"));
 blue.addEventListener("click", () => updateAccent("blue"));
 green.addEventListener("click", () => updateAccent("green"));
 orange.addEventListener("click", () => updateAccent("orange"));
+
+useConfigSettings()
+
+export function initializeSettings() {
+    onAddingClickBtnPress()
+    console.log("balls bro")
+}

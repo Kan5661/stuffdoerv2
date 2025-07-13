@@ -1,7 +1,9 @@
-const startBtn = document.getElementById("startBtn")
-const stopBtn = document.getElementById("stopBtn")
+import { onAddingClickBtnPress } from './click.js'
+
+const startBtn = document.getElementById("textStartBtn")
+const stopBtn = document.getElementById("textStopBtn")
 startBtn.addEventListener("click", on_start_btn)
-stopBtn.addEventListener("click", on_start_btn)
+stopBtn.addEventListener("click", on_stop_btn)
 document.getElementById("enterEveryLoop").addEventListener("change", function () {
     document.getElementById("onTextKeySelect").disabled = !this.checked;
 });
@@ -79,13 +81,13 @@ function on_start_btn() {
 }
 
 function on_stop_btn() {
-    eel.stop_text()()
+    eel.stop_text()
 }
 
 eel.expose(update_text_btn)
 function update_text_btn(state) {
-    let startBtn = document.getElementById("startBtn")
-    let stopBtn = document.getElementById("stopBtn")
+    let startBtn = document.getElementById("textStartBtn")
+    let stopBtn = document.getElementById("textStopBtn")
 
     console.log("updating text button: ", state)
 
@@ -100,3 +102,7 @@ function update_text_btn(state) {
 }
 
 loadTextConfig();
+
+export function initializeText() {
+    onAddingClickBtnPress()
+}

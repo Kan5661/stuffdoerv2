@@ -9,15 +9,19 @@
     margin: 30px 0px 15px 0px;
     font-family: 'QDcomicsans';
     background-color: inherit;
-    color: inherit
+    color: inherit;
+    transition: all 100ms linear;
 }
 
 .text:text {
     color: var(--accent2);
 }
 
+.text:hover {
+    opacity: 1;
+}
+
 .text:focus {
-    /* border-color: var(--accent2); */
     box-shadow: 0px 1px 2px 1px var(--accentMain);
     opacity: 1;
 }
@@ -28,8 +32,7 @@
 }
 
 .textSettingsHeader {
-    font-size: 1rem;
-    margin: 10px 0px;
+    font-size: 1.1rem;
     font-weight: normal;
 }
 
@@ -69,6 +72,7 @@
     color: inherit;
     background-color: inherit;
     opacity: 0.5;
+    transition: all 100ms linear;
 }
 .repeat_times_input:focus, .interval-ms-input:focus, .onTextKey:focus {
     outline: none;
@@ -103,7 +107,7 @@
   transform: scale(1);
 }
 
-.startBtn, .stopBtn {
+.textStartBtn, .textStopBtn {
     margin: 0 auto;
     margin-top: auto;
     margin-bottom: 40px;
@@ -115,22 +119,22 @@
     color: var(--accent2);
     transition: all 100ms linear;
     text-align: center;
-    cursor: pointer;
     opacity: 0.7;
 }
-.startBtn:hover, .stopBtn:hover {
+.textStartBtn:hover, .textStopBtn:hover {
     border-color: var(--accentMain);
     color: var(--accentMain);
     scale: 1.01;
+    cursor: pointer;
     opacity: 1;
 }
 
-.stopBtn {
+.textStopBtn {
     border-color: #ff8080;
     color: #ff0000
 }
 
-.stopBtn:hover {
+.textStopBtn:hover {
     border-color: #ff0000;
     color: #ff0000
 }

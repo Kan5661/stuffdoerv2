@@ -13,14 +13,14 @@ let mainWindow;
 
 function createWindow() {
     // Create the browser window.
-    const image = nativeImage.createFromPath(join(__dirname, './web/assets/icon2.png'));
+    const image = nativeImage.createFromPath(join(__dirname, './web/assets/icon.png'));
     // image.setTemplateImage(true)
     console.log(image.isEmpty())
     mainWindow = new BrowserWindow({
-        width: 570,
-        height: 600,
-        // width: 900,
+        // width: 570,
         // height: 600,
+        width: 1000,
+        height: 650,
         webPreferences: {
             nodeIntegration: true,
         },
@@ -46,7 +46,7 @@ function createWindow() {
 
 
     // Open the DevTools.
-    // mainWindow.webContents.openDevTools()
+    mainWindow.webContents.openDevTools()
 
     // Emitted when the window is closed.
     mainWindow.on("closed", function () {
