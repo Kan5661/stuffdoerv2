@@ -1,6 +1,6 @@
 {
     "theme": "light",
-    "accent": "none",
+    "accent": "green",
     "hotkeys": {
         "start": "F10",
         "stop": "ESC"
@@ -15,39 +15,10 @@
         "onTextKey": false
     },
     "clickConfig": {
-        "repeatMode": "clickRepeatInfinite",
-        "interval": 1,
+        "repeatMode": "clickRepeatTimes",
+        "interval": 1000,
         "offset": 0,
         "repeatTimes": 1,
-        "clicksList": [
-            {
-                "type": "left",
-                "position": {
-                    "x": -1235.5,
-                    "y": 661
-                }
-            },
-            {
-                "type": "left",
-                "position": {
-                    "x": -1095,
-                    "y": 659.5
-                }
-            },
-            {
-                "type": "left",
-                "position": {
-                    "x": -1045.5,
-                    "y": 660
-                }
-            },
-            {
-                "type": "left",
-                "position": {
-                    "x": -1062.5,
-                    "y": 755
-                }
-            }
-        ]
+        "clicksList": []
     }
 }

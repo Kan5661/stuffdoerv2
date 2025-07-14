@@ -123,8 +123,9 @@
 }
 
 .clicksList {
-    max-height: 310px;
+    max-height: 300px;
     overflow: scroll;
+    margin-bottom: 10px;
 }
 .clicksList::-webkit-scrollbar {
     display: none;

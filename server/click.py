@@ -6,6 +6,7 @@ from server.config import update_click_config
 
 click_repeat = False
 click_queue = queue.Queue()
+click_recording = False  # New flag to control when clicks are recorded
 
 def _click_worker():
     while True:
@@ -27,7 +28,8 @@ def on_press(key):
         stop_click()
 
 def on_click(x, y, button, pressed):
-    if pressed:
+    global click_recording
+    if pressed and click_recording:  # Only record when flag is True
         click_queue.put({
             "click": button.name,
             "position": {
@@ -36,28 +38,29 @@ def on_click(x, y, button, pressed):
             }
         })
 
-click_listener = None
+# Start listener once at module level - it stays running
+click_listener = mouse.Listener(on_click=on_click)
+click_listener.start()
+print("Persistent mouse listener started")
 
 @eel.expose
 def activateClickListener():
-    global click_listener
-    if click_listener is None or not click_listener.running:
-        click_listener = mouse.Listener(on_click=on_click)
-        click_listener.start()
-        print("Mouse listener started")
-    else:
-        print("Mouse listener already running")
+    global click_recording
+    click_recording = True
+    print("Click recording activated")
 
 @eel.expose
 def deactivateClickListener():
+    global click_recording
+    click_recording = False
+    print("Click recording deactivated")
+
+# Optional: Function to properly cleanup on app shutdown
+def cleanup_listener():
     global click_listener
-    print("remove click listener")
     if click_listener and click_listener.running:
         click_listener.stop()
-        click_listener = None  # reset!
         print("Mouse listener stopped")
-
-
 
 @eel.expose
 def start_click():
