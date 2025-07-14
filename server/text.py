@@ -24,8 +24,6 @@ def start_text():
 
 def _start_text_worker():
     global text_repeat
-
-    print("start text")
     config = eel.get_text_config()()
     update_text_config(config)
     eel.update_text_btn("texting")()

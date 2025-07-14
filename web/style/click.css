@@ -22,7 +22,7 @@
 
 .addClick, .addingClick {
     width: 90%;
-    border: 2px solid;
+    border: 3px solid;
     border-color: var(--accent2);
     color: var(--accent2);
     border-radius: 10px;
@@ -32,6 +32,7 @@
     background-color: inherit;
     opacity: 0.7;
     align-self: center;
+    font-size: 0.7rem;
 }
 
 .addingClick {
@@ -87,4 +88,48 @@
 .clickStopBtn:hover {
     border-color: #ff0000;
     color: #ff0000
+}
+
+.click {
+    width: 90%;
+    border: 2px solid;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    font-size: 0.7rem;
+    border-radius: 10px;
+    padding: 10px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.remove-btn {
+    margin-left: auto;
+    margin-right: 10px;
+    border: none;
+    background-color: inherit;
+    transition: all 100ms linear;
+}
+
+.remove-btn:hover {
+    scale: 1.1;
+    cursor: pointer;
+    color: var(--accentMain)
+}
+
+.clickType {
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+.clicksList {
+    max-height: 310px;
+    overflow: scroll;
+}
+.clicksList::-webkit-scrollbar {
+    display: none;
+}
+
+.xpos, .ypos {
+    display: inline;
 }

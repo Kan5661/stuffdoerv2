@@ -40,9 +40,9 @@
                             <h2 class="clickHeader">click options</h2>
                             <div class="clickOptions">
                                 <div class="checkbox-option">
-                                    <input type="radio" id="clickRepeatTimes" class="custom-checkbox" name="clickRepeatMode" checked> <!-- textMode -->
+                                    <input type="radio" id="clickRepeatTimes" class="custom-checkbox" name="clickRepeatMode" checked> <!-- clickMode -->
                                     <label for="clickRepeatTimes">repeat</label>
-                                    <input type="number" min="1" value="1" class="repeat_times_input" id="clickRepeatTimes"> <!-- repeatTimes -->
+                                    <input type="number" min="1" value="1" class="repeat_times_input" id="cRepeatTimes"> <!-- repeatTimes -->
                                     <label for="clickRepeatTimes">times</label>
                                 </div>
                                 <div class="checkbox-option">
@@ -63,8 +63,8 @@
                         </div>
                         <div class="clickList">
                             <h2 class="clickHeader">click list</h2>
-                            <div class="clicksList">
-
+                            <div class="clicksList" id="clicksList">
+                                <!-- need to be added with js -->
                             </div>
                             <button class="addClick" id="addClick">add click</button>
                             <button class="addingClick hideElement" id="addingClick">select click position</button>

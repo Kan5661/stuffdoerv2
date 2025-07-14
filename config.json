@@ -1,24 +1,53 @@
 {
     "theme": "light",
-    "accent": "blue",
+    "accent": "none",
     "hotkeys": {
         "start": "F10",
         "stop": "ESC"
     },
     "textConfig": {
         "repeatMode": "repeatTimes",
-        "text": "hello world! ",
+        "text": "May back great, without present, they're around, mean for use lead see under, some hold. So before more day by the may than both get write while run of program. Than hand because before child - move than own increase be both or ",
         "interval": 1000,
-        "offset": 0,
-        "repeatTimes": 10,
-        "strokeDelay": 25,
-        "onTextKey": "enter"
+        "offset": 10,
+        "repeatTimes": 1,
+        "strokeDelay": 10,
+        "onTextKey": false
     },
     "clickConfig": {
-        "clickMode": "repeat_times",
-        "repeatTimes": 1,
-        "interval": 1000,
+        "repeatMode": "clickRepeatInfinite",
+        "interval": 1,
         "offset": 0,
-        "clickList": []
+        "repeatTimes": 1,
+        "clicksList": [
+            {
+                "type": "left",
+                "position": {
+                    "x": -1235.5,
+                    "y": 661
+                }
+            },
+            {
+                "type": "left",
+                "position": {
+                    "x": -1095,
+                    "y": 659.5
+                }
+            },
+            {
+                "type": "left",
+                "position": {
+                    "x": -1045.5,
+                    "y": 660
+                }
+            },
+            {
+                "type": "left",
+                "position": {
+                    "x": -1062.5,
+                    "y": 755
+                }
+            }
+        ]
     }
 }
