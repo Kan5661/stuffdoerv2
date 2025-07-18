@@ -19,6 +19,35 @@
         "interval": 1000,
         "offset": 0,
         "repeatTimes": 1,
-        "clicksList": []
+        "clicksList": [
+            {
+                "type": "left",
+                "position": {
+                    "x": 666.5,
+                    "y": 528.5
+                }
+            },
+            {
+                "type": "left",
+                "position": {
+                    "x": 715,
+                    "y": 562
+                }
+            },
+            {
+                "type": "left",
+                "position": {
+                    "x": 841.5,
+                    "y": 588.5
+                }
+            },
+            {
+                "type": "left",
+                "position": {
+                    "x": 663.5,
+                    "y": 799.5
+                }
+            }
+        ]
     }
 }

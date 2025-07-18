@@ -3,7 +3,6 @@ from pynput.keyboard import Key
 import time, queue, threading, eel, random
 from server.config import update_click_config
 
-
 click_repeat = False
 click_queue = queue.Queue()
 click_recording = False  # New flag to control when clicks are recorded
@@ -19,8 +18,8 @@ def _click_worker():
 
 threading.Thread(target=_click_worker, daemon=True).start()
 
-
 def on_press(key):
+    """This function is called by the persistent listener in listener.py"""
     global click_repeat
     if key == Key.f10:
         start_click()
@@ -38,7 +37,7 @@ def on_click(x, y, button, pressed):
             }
         })
 
-# Start listener once at module level - it stays running
+# Start persistent mouse listener once at module level
 click_listener = mouse.Listener(on_click=on_click)
 click_listener.start()
 print("Persistent mouse listener started")
@@ -123,7 +122,6 @@ def start_click():
 
     click_thread = threading.Thread(target=click_loop)
     click_thread.start()
-
 
 @eel.expose
 def stop_click():

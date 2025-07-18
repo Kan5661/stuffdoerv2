@@ -6,59 +6,58 @@ import server.script as script
 
 class ListenerManager:
     def __init__(self):
-        self.current_listener = None
+        self.keyboard_listener = None
         self.current_mode = None
-        self.listeners = {
-            'text': self.create_text_listener,
-            'click': self.create_click_listener,
-            # 'script': self.create_script_listener
-        }
+        
+    def unified_on_press(self, key):
+        """Single handler that routes to appropriate module based on current mode"""
+        if self.current_mode == 'text':
+            text.on_press(key)
+        elif self.current_mode == 'click':
+            click.on_press(key)
+        elif self.current_mode == 'script':
+            script.on_press(key)
+        # If no mode is set, do nothing
 
-    def create_text_listener(self):
-        return keyboard.Listener(
-            on_press=text.on_press,
-        )
+    def start_persistent_listener(self):
+        """Start one listener that stays running"""
+        if self.keyboard_listener is None:
+            self.keyboard_listener = keyboard.Listener(
+                on_press=self.unified_on_press
+            )
+            self.keyboard_listener.start()
+            print("Persistent keyboard listener started")
 
-    def create_click_listener(self):
-        return keyboard.Listener(
-            on_press=click.on_press,
-        )
-
-    def create_script_listener(self):
-        return keyboard.Listener(
-            on_press=script.on_press,
-        )
-
-    def switch_listener(self, mode):
-        # Stop current listener if active
-        if self.current_listener and self.current_listener.running:
-            self.current_listener.stop()
-            self.current_listener = None
-
-        # Start new listener if mode is valid
-        if mode in self.listeners:
-            self.current_listener = self.listeners[mode]()
-            self.current_listener.start()
-            self.current_mode = mode
+    def switch_mode(self, mode):
+        """Switch mode without touching the listener"""
+        valid_modes = ['text', 'click', 'script', 'home', 'settings']
+        
+        if mode in valid_modes:
+            self.current_mode = mode if mode in ['text', 'click', 'script'] else None
             print(f"Switched to {mode} mode")
         else:
             self.current_mode = None
-            print("No active listener")
+            print("Unknown mode, disabling listener")
 
     def stop_all(self):
-        if self.current_listener and self.current_listener.running:
-            self.current_listener.stop()
-            self.current_listener = None
+        """Stop the persistent listener completely"""
+        if self.keyboard_listener and self.keyboard_listener.running:
+            self.keyboard_listener.stop()
+            self.keyboard_listener = None
             self.current_mode = None
+            print("Keyboard listener stopped")
 
 # Global instance
 listener_manager = ListenerManager()
+
+# Start the persistent listener when module loads
+listener_manager.start_persistent_listener()
 
 # Expose to JavaScript
 @eel.expose
 def set_mode(mode):
     print("set mode: ", mode)
-    listener_manager.switch_listener(mode)
+    listener_manager.switch_mode(mode)
 
 @eel.expose
 def get_current_mode():
@@ -67,3 +66,9 @@ def get_current_mode():
 @eel.expose
 def stop_keyboard_listener():
     listener_manager.stop_all()
+
+@eel.expose
+def restart_keyboard_listener():
+    """In case you need to restart the listener"""
+    listener_manager.stop_all()
+    listener_manager.start_persistent_listener()
